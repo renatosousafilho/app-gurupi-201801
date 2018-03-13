@@ -1,0 +1,31 @@
+<header class="navbar" id="header-navbar">
+  <div class="container">
+    <a href="<%= root_path %>" id="logo" class="navbar-brand">
+    </a>
+
+    <div class="clearfix">
+      <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="fa fa-bars"></span>
+      </button>
+
+      <% if user_signed_in? %>
+      <div class="nav-no-collapse pull-right" id="header-nav">
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown profile-dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span><%= current_user.email %></span> <b class="caret"></b>
+            </a>
+          </li>
+          <li>
+            <a href="<%= destroy_user_session_path %>" class="btn" data-method="delete" >
+              <i class="fa fa-power-off"></i>
+              <span class="hidden-xs">Sair</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</header>

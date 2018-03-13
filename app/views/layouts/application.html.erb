@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'shared/header' %>
+    <div id="page-wrapper" class="container">
+      <div class="row">
+        <%= render 'shared/flash_messages' %>
+        
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

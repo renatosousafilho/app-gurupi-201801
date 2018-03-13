@@ -1,0 +1,10 @@
+<div class="flash-messages" id="flash-messages">
+  <% flash.each do |type, message| %>
+    <% if message.present? and message != true %>
+      <div class="alert <%= bootstrap_class_for(type) %> fade in">
+        <%= raw message %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<script>setTimeout("$('#flash-messages').fadeOut(1000)", 3000);</script>

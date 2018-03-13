@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Author</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.id %></td>
+      <td><%= post.title %></td>
+      <td><%= post.author.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "New post", new_post_path, class: "btn btn-primary" %>
